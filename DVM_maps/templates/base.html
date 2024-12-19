@@ -37,8 +37,8 @@
     <div class="container">
         <!-- Barra lateral izquierda -->
         <div class="sidebar">
-            <picture><img src="{% static 'images/base/cctv.png' %}" alt="New camera" class="imgsidebar" id="newcamera" onclick="newcamera()"></picture>
-            <picture><img src="{% static 'images/base/site.png' %}" alt="New site" class="imgsidebar" id="newsite" onclick="newsite()"></picture>
+            <picture><img src="{% static 'images/cctv.png' %}" alt="New camera" class="imgsidebar" id="newcamera" onclick="newcamera()"></picture>
+            <picture><img src="{% static 'images/site.png' %}" alt="New site" class="imgsidebar" id="newsite" onclick="newsite()"></picture>
         </div>
 
         <!-- Área central -->
@@ -47,7 +47,11 @@
         </div>
     </div>
     {% block scripts %} {% endblock %}
-    <script src="js/javascript.js"></script>
+    <script>
+        var imgcamera = "{% static 'images/cctv.png' %}"
+        var imgsite = "{% static 'images/site.png' %}"
+    </script>
+    <script src="{% static 'js/javascript.js' %}"></script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@ var screenH = 0;
 var rectW = 0;
 var rectH = 0;
 var camID = 0;
+siteID = 0;
 
 
 window.onload = function() {
@@ -23,7 +24,7 @@ window.onload = function() {
 
 function addcamera(x,y) {
   const image = document.createElement("img");
-  image.src = "./images/cctv.png" //Img en variable para enviar lo que desees
+  image.src = imgcamera //Img en variable para enviar lo que desees
   camID = camID + 1;
   camname= "cam" + camID
   image.alt = camname
@@ -40,17 +41,40 @@ function addcamera(x,y) {
 }
 
 
+function addsite(x,y) {
+  const image = document.createElement("img");
+  image.src = imgsite //Img en variable para enviar lo que desees
+  siteID = siteID + 1;
+  sitename= "site" + siteID
+  image.alt = sitename
+  image.classList.add("image");
+  image.style.left = `${(x + 70) - image.width / 2}px`;
+  image.style.top = `${(y +54) - image.height / 2}px`;
+  image.style.position = 'Absolute'
+  // Append the image to the container
+  const container = document.getElementById("main-content");
+  container.appendChild(image);
+  // add
+  console.log("site added");
+  
+}
+
 
 function centralclick(event) {
-  console.log("adding: " + addingcamera) ;
-  if (addingcamera == true){  
-    // Gat coordinates of click
-    const x = event.clientX - 70;
-    const y = event.clientY - 50;
+  // Gat coordinates of click
+  const x = event.clientX - 70;
+  const y = event.clientY - 50;
+  if (addingcamera == true)
+    {  
+    console.log("adding canera: " + addingcamera) ;
     // just control
     addcamera(x,y)
-
-  }
+    } 
+  else if (addingsite == true)
+    {
+    console.log("adding site: " + addingsite) ;
+    addsite(x,y)
+    }
 }
 
 // --- New elements ---
