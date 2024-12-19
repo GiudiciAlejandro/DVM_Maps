@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DVM Maps</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     {% block extra_css %} {% endblock %}
 
 </head>
@@ -33,6 +33,22 @@
         </ul>
     </nav>
 
+
+
+
+
+<!-- 
+revisar esto
+https://stackoverflow.com/questions/52501470/i-want-to-create-django-popup-form-in-my-project
+y esto otro como base
+https://pypi.org/project/django-bootstrap-modal-forms/
+ -->
+
+
+
+
+
+
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Barra lateral izquierda -->
@@ -48,9 +64,17 @@
     </div>
     {% block scripts %} {% endblock %}
     <script>
+        // Declare image variables to be used in JS
         var imgcamera = "{% static 'images/cctv.png' %}"
         var imgsite = "{% static 'images/site.png' %}"
+        var newcamURL = "{% url 'create_camera' %}"
     </script>
+   <!-- Bootstrap for modela popup screen -->
+   <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- Bootstrap 5 -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap5.modal.forms.js' %}"></script>
+    <!-- JS custom script calls -->
     <script src="{% static 'js/javascript.js' %}"></script>
 </body>
 

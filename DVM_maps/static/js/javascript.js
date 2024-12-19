@@ -9,7 +9,7 @@ var screenH = 0;
 var rectW = 0;
 var rectH = 0;
 var camID = 0;
-siteID = 0;
+var siteID = 0;
 
 
 window.onload = function() {
@@ -26,8 +26,9 @@ function addcamera(x,y) {
   const image = document.createElement("img");
   image.src = imgcamera //Img en variable para enviar lo que desees
   camID = camID + 1;
-  camname= "cam" + camID
+  camname= "cam" + camID;
   image.alt = camname
+  image.id = camname;
   image.classList.add("image");
   image.style.left = `${(x + 70) - image.width / 2}px`;
   image.style.top = `${(y +54) - image.height / 2}px`;
@@ -37,6 +38,8 @@ function addcamera(x,y) {
   container.appendChild(image);
   // add
   console.log("camera added");
+  modalForm(document.getElementById(camname), {
+    formURL: newcamURL })
   
 }
 
