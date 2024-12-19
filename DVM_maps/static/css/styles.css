@@ -1,0 +1,144 @@
+/* Reseteo básico de márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para la barra de navegación superior */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: left;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+/* Estilos para el submenú de "Project" */
+.navbar ul li:hover > .submenuprjt   {
+    display: block;
+    visibility: visible;
+}
+
+.submenuprjt  {
+    position: absolute;
+    background-color: #444;
+    list-style-type: none;
+    padding: 10px;
+    margin-top: 0px;
+    display: none;
+    visibility: hidden;
+}
+
+.submenuprjt  li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+.submenuprjt  ul li {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: none;
+}
+
+
+/* Estilos para el submenú de "Project" */
+.navbar ul li:hover > .submenuedit   {
+    display: block;
+    visibility: visible;
+}
+
+.submenuedit  {
+    position: absolute;
+    background-color: #444;
+    list-style-type: none;
+    padding: 10px;
+    margin-top: 0px;
+    display: none;
+    visibility: hidden;
+}
+
+.submenuedit  li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+.submenuedit  ul li {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: none;
+}
+
+
+/* Barra lateral izquierda */
+.sidebar {
+    position: fixed;
+    top: 50px; /* Espacio debajo de la navbar */
+    left: 0;
+    width: 70px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+.sidebar p {
+    transform: rotate(-90deg);
+    writing-mode: vertical-lr;
+    margin: 0;
+}
+
+.imgsidebar{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.imgsidebar:hover {
+    cursor:grab;
+}
+
+/* Contenedor principal */
+.container {
+    margin-left: 70px; /* Espacio para la barra lateral */
+    margin-top: 50px; /* Espacio para la barra de navegación */
+    display: flex;
+    height: calc(100vh - 50px); /* Altura restante después de la navbar */
+}
+
+.main-content {
+    flex-grow: 1;
+    margin-left: 0px;
+    background-color: #888282;
+    overflow-y: auto;
+    background-image:url( ./images/hoja.png);
+    background-size:cover;
+}
+

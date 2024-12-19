@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVM Maps</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    {% block extra_css %} {% endblock %}
+
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Project</a>
+                <ul class="submenuprjt">
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Load</a></li>
+                    <li><a href="#">Exit</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Edit</a>
+                <ul class="submenuedit">
+                    <li><a href="#">Copy</a></li>
+                    <li><a href="#">Paste</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Barra lateral izquierda -->
+        <div class="sidebar">
+            <picture><img src="{% static 'images/base/cctv.png' %}" alt="New camera" class="imgsidebar" id="newcamera" onclick="newcamera()"></picture>
+            <picture><img src="{% static 'images/base/site.png' %}" alt="New site" class="imgsidebar" id="newsite" onclick="newsite()"></picture>
+        </div>
+
+        <!-- Área central -->
+        <div class="main-content" id="main-content"   onclick="centralclick(event)">
+            {% block contenido %} {% endblock %}
+        </div>
+    </div>
+    {% block scripts %} {% endblock %}
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
