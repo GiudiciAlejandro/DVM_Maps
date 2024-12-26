@@ -76,6 +76,13 @@ https://pypi.org/project/django-bootstrap-modal-forms/
     <script src="{% static 'js/bootstrap5.modal.forms.js' %}"></script>
     <!-- JS custom script calls -->
     <script src="{% static 'js/javascript.js' %}"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (e) => {
+          modalForm(document.getElementById('create-camera'), {
+            formURL: "{% url 'create_camera' %}"
+          })
+        });    
+    </script>
 </body>
 
 </html>

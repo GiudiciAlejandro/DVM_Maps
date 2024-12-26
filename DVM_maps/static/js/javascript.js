@@ -9,7 +9,7 @@ var screenH = 0;
 var rectW = 0;
 var rectH = 0;
 var camID = 0;
-var siteID = 0;
+var siteID = 1;
 
 
 window.onload = function() {
@@ -27,19 +27,19 @@ function addcamera(x,y) {
   image.src = imgcamera //Img en variable para enviar lo que desees
   camID = camID + 1;
   camname= "cam" + camID;
-  image.alt = camname
+  image.alt = camname;
   image.id = camname;
   image.classList.add("image");
   image.style.left = `${(x + 70) - image.width / 2}px`;
   image.style.top = `${(y +54) - image.height / 2}px`;
-  image.style.position = 'Absolute'
+  image.style.position = 'Absolute';
   // Append the image to the container
   const container = document.getElementById("main-content");
   container.appendChild(image);
   // add
   console.log("camera added");
-  modalForm(document.getElementById(camname), {
-    formURL: newcamURL })
+  modalForm( {
+    formURL: newcamURL });
   
 }
 
@@ -71,12 +71,12 @@ function centralclick(event) {
     {  
     console.log("adding canera: " + addingcamera) ;
     // just control
-    addcamera(x,y)
+    addcamera(x,y);
     } 
   else if (addingsite == true)
     {
     console.log("adding site: " + addingsite) ;
-    addsite(x,y)
+    addsite(x,y);
     }
 }
 
@@ -101,6 +101,6 @@ function newcamera() {
       addingsite = false;
     } else {
       addingsite = true;
-      addingcamera = false
+      addingcamera = false;
     }
   }

@@ -34,7 +34,7 @@ class Camera(models.Model):
     poy = models.IntegerField()
 
     def __str__(self):
-        return self.name, self.number
+        return self.name
 
 class Jump(models.Model):
     # Links to another web page. It contains the X and Y position in the site web page
