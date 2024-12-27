@@ -24,7 +24,7 @@ window.onload = function() {
 
 function addcamera(x,y) {
   const image = document.createElement("img");
-  image.src = imgcamera //Img en variable para enviar lo que desees
+  image.src = imgcamera; //Img en variable para enviar lo que desees
   camID = camID + 1;
   camname= "cam" + camID;
   image.alt = camname;
@@ -38,15 +38,12 @@ function addcamera(x,y) {
   container.appendChild(image);
   // add
   console.log("camera added");
-  modalForm( {
-    formURL: newcamURL });
-  
-}
+};
 
 
 function addsite(x,y) {
   const image = document.createElement("img");
-  image.src = imgsite //Img en variable para enviar lo que desees
+  image.src = imgsite; //Img en variable para enviar lo que desees
   siteID = siteID + 1;
   sitename= "site" + siteID
   image.alt = sitename

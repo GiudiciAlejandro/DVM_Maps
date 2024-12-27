@@ -1,5 +1,11 @@
 {% load static %}
 
+{% extends 'app/bootstrap.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block bootstrap5_content %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DVM Maps</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
     {% block extra_css %} {% endblock %}
 
 </head>
@@ -73,16 +79,9 @@ https://pypi.org/project/django-bootstrap-modal-forms/
    <script src="{% static 'js/bootstrap.js' %}"></script>
     <!-- Bootstrap 5 -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap5.modal.forms.js' %}"></script>
     <!-- JS custom script calls -->
     <script src="{% static 'js/javascript.js' %}"></script>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', (e) => {
-          modalForm(document.getElementById('create-camera'), {
-            formURL: "{% url 'create_camera' %}"
-          })
-        });    
-    </script>
+    
 </body>
 
 </html>
