@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from .forms import CameraModelForm
 from .models import *
-from bootstrap_modal_forms.generic import BSModalCreateView, BSModalUpdateView, BSModalReadView, BSModalDeleteView
+from bootstrap_modal_forms.generic import BSModalCreateView
 
 
 class Index(generic.ListView):
@@ -35,18 +35,18 @@ class CameraCreateView(BSModalCreateView):
     
     
 
-# Update camera
-class BookUpdateView(BSModalUpdateView):
-    model = Camera
-    template_name = 'update_camera.html'
-    form_class = CameraModelForm
-    success_message = 'Success: Camera was updated.'
-    success_url = reverse_lazy('index')
+# # Update camera
+# class BookUpdateView(BSModalUpdateView):
+#     model = Camera
+#     template_name = 'update_camera.html'
+#     form_class = CameraModelForm
+#     success_message = 'Success: Camera was updated.'
+#     success_url = reverse_lazy('index')
 
 
-# Delete camera
-class BookDeleteView(BSModalDeleteView):
-    model = Camera
-    template_name = 'delete_camera.html'
-    success_message = 'Success: Camera was deleted.'
-    success_url = reverse_lazy('index')
+# # Delete camera
+# class BookDeleteView(BSModalDeleteView):
+#     model = Camera
+#     template_name = 'delete_camera.html'
+#     success_message = 'Success: Camera was deleted.'
+#     success_url = reverse_lazy('index')

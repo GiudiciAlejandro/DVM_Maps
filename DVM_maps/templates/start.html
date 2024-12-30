@@ -1,29 +1,31 @@
 {% extends 'base.html' %}
-{% load django_bootstrap5 %}
-{% block extra_css %}
-    
-{% endblock %}
+
+{% block extra_css %} {% endblock %}
 
 {% block page_title %} Bienvenido {% endblock %}
 
-{% block menus %}
-
-{% endblock %}
+{% block menus %} {% endblock %}
   <!--Caja-->
   {% block contenido %} 
   <main class=main>
 
-    <div class="message">
-      <h3>Hola</h3>
-      <h4>Prueba
-      </h4>
-    </div>
+    <div class="main-content" id="main-content"   onclick="centralclick(event)">
+      <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+          <div class="modal-dialog" role="document">
+          <div class="modal-content"></div>
+          </div>
+      </div>
+      <!-- Create book button -->
+      <button id="crear_camera" class="btn btn-primary" type="button" name="button">Craer camera</button>
+      </div>
     
+    {% endblock %}
+
+    {% block scripts %}
+   
+    {% endblock %}
     
-    <!-- Create book button -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Craer camera
-    </button>
+  
+    https://github.com/trco/django-bootstrap-modal-forms/blob/master/examples/templates/_modal.html
    
   </main>
-  {% endblock %}
