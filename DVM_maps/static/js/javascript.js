@@ -41,6 +41,8 @@ function addcamera(x,y) {
 };
 
 
+
+
 function addsite(x,y) {
   const image = document.createElement("img");
   image.src = imgsite; //Img en variable para enviar lo que desees
@@ -61,6 +63,7 @@ function addsite(x,y) {
 
 
 function centralclick(event) {
+  console.log("adding : ") ;
   // Gat coordinates of click
   const x = event.clientX - 70;
   const y = event.clientY - 50;
@@ -83,7 +86,7 @@ function newcamera() {
       addingcamera = false;
     } else {
       addingcamera = true;
-      addingsite = false
+      addingsite = false;
     }
   }
 

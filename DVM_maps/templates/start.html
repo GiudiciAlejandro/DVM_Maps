@@ -7,25 +7,44 @@
 {% block menus %} {% endblock %}
   <!--Caja-->
   {% block contenido %} 
+
+<!-- Modal content -->
+  <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog mt-5">
+      <div class="modal-content">
+      </div>
+    </div>
+  </div>
+  
+<!-- Main content -->
+    
   <main class=main>
 
     <div class="main-content" id="main-content"   onclick="centralclick(event)">
       <div class="modal fade" tabindex="-1" role="dialog" id="modal">
           <div class="modal-dialog" role="document">
-          <div class="modal-content"></div>
+            <div class="modal-content"></div>
           </div>
       </div>
-      <!-- Create book button -->
-      <button id="crear_camera" class="btn btn-primary" type="button" name="button">Craer camera</button>
-      </div>
+    </div>
+    <!-- Create book button -->
+    <button id="crear_camera" class="btn btn-primary" type="button" name="button">Crear camera</button>
     
-    {% endblock %}
+    {% endblock contenido %}
 
-    {% block scripts %}
-   
-    {% endblock %}
+  {% block extrascripts %}
+    <script type="text/javascript">
+
+     
+      // instantiate single modal form
+      document.addEventListener('DOMContentLoaded', (e) => {
+        modalForm(document.getElementById('crear_camera'), {
+          formURL: newcamURL
+        })
+      });
+    </script>
+  {% endblock extrascripts %}
     
   
-    https://github.com/trco/django-bootstrap-modal-forms/blob/master/examples/templates/_modal.html
    
   </main>

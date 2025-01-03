@@ -2,10 +2,6 @@
 
 {% load static %}
 
-{% load django_bootstrap5 %}
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -50,7 +46,7 @@
         </div>
         
         <!-- Área central -->
-        {% block contenido %} {% endblock %}
+        {% block contenido %} {% endblock contenido %}
         
     </div>
     
@@ -64,11 +60,12 @@
     </script>
     
    <!-- Bootstrap for modela popup screen -->
+   
    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap5.modal.forms.js' %}"></script>
-    <script src="{% static 'js/javascript.js' %}"></script>
-    
-    {% block scripts %} {% endblock %}
+   <script src="{% static 'js/bootstrap5.modal.forms.js' %}"></script>
+   <script src="{% static 'js/javascript.js' %}"></script>
+
+    {% block extrascripts %}{% endblock extrascripts %}
 </body>
 
 </html>
